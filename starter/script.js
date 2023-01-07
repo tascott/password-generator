@@ -90,19 +90,29 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let noOfChars;
+  let noOfChars, upperCase, lowerCase, numeric, special;
+  let minOptsSelected = false;
 
   do {
     noOfChars = Number(prompt('how many characters would you like to include in your password? (Min 10, Max 64) '));
     if ((noOfChars > 64) || (noOfChars < 10)) alert('Character length must be a number and between 10 and 64!');
   } while ((noOfChars < 10) || (noOfChars > 64));
 
-  let upperCase = confirm('Include uppercase letters?');
-  let lowerCase = confirm('Include lowercase letters?');
-  let numeric = confirm('Include numeric characters?');
-  let special = confirm('Include special characters?');
+  do {
+    upperCase = confirm('Include uppercase letters?');
+    lowerCase = confirm('Include lowercase letters?');
+    numeric = confirm('Include numeric characters?');
+    special = confirm('Include special characters?');
+    console.log(upperCase)
+    if (upperCase || lowerCase || numeric || special) {
+      minOptsSelected = true;
+    } else {
+      alert('You must pick at least one!')
+    }
+  } while (minOptsSelected == false);
 
-  return noOfChars, upperCase,lowerCase, numeric, special;}
+  return {noOfChars, upperCase, lowerCase, numeric, special};
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
