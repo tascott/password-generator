@@ -88,9 +88,11 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+let noOfChars;
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let noOfChars, upperCase, lowerCase, numeric, special;
+  let upperCasedCharacters, lowerCasedCharacters, numericCharacters, specialCharacters;
   let minOptsSelected = false;
 
   do {
@@ -99,19 +101,18 @@ function getPasswordOptions() {
   } while ((noOfChars < 10) || (noOfChars > 64));
 
   do {
-    upperCase = confirm('Include uppercase letters?');
-    lowerCase = confirm('Include lowercase letters?');
-    numeric = confirm('Include numeric characters?');
-    special = confirm('Include special characters?');
-    console.log(upperCase)
-    if (upperCase || lowerCase || numeric || special) {
+    upperCasedCharacters = confirm('Include uppercase letters?');
+    lowerCasedCharacters = confirm('Include lowercase letters?');
+    numericCharacters = confirm('Include numeric characters?');
+    specialCharacters = confirm('Include special characters?');
+    if (upperCasedCharacters || lowerCasedCharacters || numericCharacters || special) {
       minOptsSelected = true;
     } else {
       alert('You must pick at least one!')
     }
   } while (minOptsSelected == false);
 
-  return {noOfChars, upperCase, lowerCase, numeric, special};
+  return {upperCasedCharacters, lowerCasedCharacters, numericCharacters, specialCharacters};
 }
 
 // Function for getting a random element from an array
