@@ -119,30 +119,36 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  // let length = arr.length;
   // pick a random element from the array passed in
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  getPasswordOptions();
+  // returns 'upperCase', 'lowerCase', etc
   let arrayOptions = getPasswordOptions();
   let arraysToUse = [];
   let allChars;
   let password;
 
+  //This loop will give us the names of the arrays we need to get random elements from
   for (let key in arrayOptions) {
     if (arrayOptions[key]) {
       arraysToUse.push(characters[key])
     }
   }
+
+  // Pull out all the arrays to make one array of selected characters
   allChars = arraysToUse.flat()
   password = '';
 
+  // run for loop
   for (let i = 0; i < noOfChars; i++) {
     password += allChars[Math.floor(Math.random() * allChars.length)];
   }
+
+  //Need to return a string for the writePassword() function
+  return password;
 
 }
 
