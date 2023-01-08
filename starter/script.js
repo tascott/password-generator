@@ -127,6 +127,22 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
+  let arrayOptions = getPasswordOptions();
+  let arraysToUse = [];
+  let allChars;
+  let password;
+
+  for (let key in arrayOptions) {
+    if (arrayOptions[key]) {
+      arraysToUse.push(characters[key])
+    }
+  }
+  allChars = arraysToUse.flat()
+  password = '';
+
+  for (let i = 0; i < noOfChars; i++) {
+    password += allChars[Math.floor(Math.random() * allChars.length)];
+  }
 
 }
 
