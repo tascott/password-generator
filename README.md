@@ -16,10 +16,12 @@ The following prompts will ask if you want to include uppercase, lowercase, nume
 
 Your password will be displayed in the box.
 
-[Link to working site]()
+[Link to working site](https://tascott.github.io/password-generator/)
 
 
 ## Screenshot
+
+<img width="549" alt="s-shot" src="https://user-images.githubusercontent.com/18272434/211406847-0e729137-7046-4fe4-b2c9-d480a89d6b1f.png">
 
 
 ## Credits
