@@ -98,9 +98,9 @@ function getPasswordOptions() {
   let minOptsSelected = false;
 
   do {
-    noOfChars = Number(prompt('how many characters would you like to include in your password? (Min 10, Max 64) '));
+    noOfChars = Number(prompt('How many characters would you like to include in your password (number between 10 and 64'));
     if ((noOfChars > 64) || (noOfChars < 10)) alert('Character length must be a number and between 10 and 64!');
-  } while ((noOfChars < 10) || (noOfChars > 64));
+  } while ((noOfChars < 10) || (noOfChars > 64)|| (isNaN(noOfChars)));
 
   do {
     upperCasedCharacters = confirm('Include uppercase letters?');
