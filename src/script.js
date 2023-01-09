@@ -129,7 +129,7 @@ function generatePassword() {
   let arrayOptions = getPasswordOptions();
   let arraysToUse = [];
   let allChars;
-  let password;
+  let password = '';
 
   //This loop will give us the names of the arrays we need to get random elements from
   for (let key in arrayOptions) {
@@ -140,7 +140,6 @@ function generatePassword() {
 
   // Pull out all the arrays to make one array of selected characters
   allChars = arraysToUse.flat()
-  password = '';
 
   // run for loop
   for (let i = 0; i < noOfChars; i++) {
